@@ -5,15 +5,11 @@
 [![License](https://img.shields.io/cocoapods/l/ActionPickerUtils.svg?style=flat)](http://cocoapods.org/pods/ActionPickerUtils)
 [![Platform](https://img.shields.io/cocoapods/p/ActionPickerUtils.svg?style=flat)](http://cocoapods.org/pods/ActionPickerUtils)
 
-TODO
+Utils global functions to simplify working with ActionSheetPicker-3.0
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## GIF animation
-
-TODO
 
 ## Installation
 
@@ -28,7 +24,19 @@ pod 'ActionPickerUtils'
 
 ## Usage
 
-TODO
+To pick date:
+```
+g_showDatePicker { date in
+    print(date)
+}
+```
+
+To pick string:
+```
+g_showStringsPicker(values: ["Hello", "World"]) { index, string in
+    print(\(index) - \(string))
+}
+```
 
 See example project for more details.
 
