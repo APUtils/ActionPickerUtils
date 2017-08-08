@@ -14,6 +14,16 @@ import UIKit
     import CoreActionSheetPicker
 #endif
 
+private var origin: UIView? {
+    if let origin = UIApplication.shared.keyWindow {
+        return origin
+    } else if let origin = UIApplication.shared.delegate?.window ?? nil {
+        return origin
+    } else {
+        return nil
+    }
+}
+
 /// Show date picker
 /// - parameter title: Picker title
 /// - parameter mode: Picker mode
@@ -25,7 +35,7 @@ import UIKit
 public func g_showDatePicker(title: String? = nil, mode: UIDatePickerMode = .dateAndTime, date: Date? = nil, minDate: Date? = nil, maxDate: Date? = nil, showTodayButton: Bool = false, completion: @escaping (Date) -> ()) {
     let pickerVc = ActionSheetDatePicker(title: title, datePickerMode: mode, selectedDate: date ?? Date(), doneBlock: { picker, date, originView in
         completion(date as! Date)
-    }, cancel: nil, origin: UIApplication.shared.keyWindow)!
+    }, cancel: nil, origin: origin)!
     
     pickerVc.minimumDate = minDate
     pickerVc.maximumDate = maxDate
@@ -51,7 +61,7 @@ public func g_showStringsPicker(title: String? = nil, values: [String], selected
     
     let pickerVc = ActionSheetStringPicker(title: title, rows: values, initialSelection: selected, doneBlock: { picker, index, string in
         completion(index, values[index])
-    }, cancel: nil, origin: UIApplication.shared.keyWindow)!
+    }, cancel: nil, origin: origin)!
     
     pickerVc.toolbarBackgroundColor = UINavigationBar.appearance().barTintColor
     pickerVc.titleTextAttributes = UINavigationBar.appearance().titleTextAttributes

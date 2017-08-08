@@ -1,5 +1,5 @@
 PODS:
-  - ActionPickerUtils (1.0.1):
+  - ActionPickerUtils (1.0.2):
     - ActionSheetPicker-3.0
   - ActionSheetPicker-3.0 (2.2.0)
   - FBSnapshotTestCase (2.1.4):
@@ -27,7 +27,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  ActionPickerUtils: daafe843a10e30fb7e582cce306bb5397a994eda
+  ActionPickerUtils: 2b1405be9e9eb8eabfaa8afd70afa08ad73dcb49
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
