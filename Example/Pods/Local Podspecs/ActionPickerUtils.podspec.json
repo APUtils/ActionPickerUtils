@@ -1,6 +1,6 @@
 {
   "name": "ActionPickerUtils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "summary": "Utils global functions to simplify working with ActionSheetPicker-3.0",
   "description": "Utils global functions to simplify working with ActionSheetPicker-3.0.\nUser `g_showDatePicker` for date picker and `g_showStringsPicker` for strings picker.",
   "homepage": "https://github.com/APUtils/ActionPickerUtils",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/APUtils/ActionPickerUtils.git",
-    "tag": "1.0.1"
+    "tag": "1.0.2"
   },
   "platforms": {
     "ios": "8.0"

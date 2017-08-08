@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 `ActionPickerUtils` adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.2](https://github.com/APUtils/ActionPickerUtils/releases/tag/1.0.2)
+Released on 08/08/2017.
+
+#### Fixed
+- Carthage support fix
+- Using app delegate window if key window is nil
+
 ## [1.0.1](https://github.com/APUtils/ActionPickerUtils/releases/tag/1.0.1)
 Released on 08/08/2017.
 
