@@ -7,7 +7,11 @@
 //
 
 import UIKit
-import ActionSheetPicker_3_0
+#if COCOAPODS
+    import ActionSheetPicker_3_0
+#else
+    import CoreActionSheetPicker
+#endif
 
 /// Show date picker
 /// - parameter title: Picker title
