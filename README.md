@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/ActionPickerUtils.svg?style=flat)](http://cocoapods.org/pods/ActionPickerUtils)
 [![License](https://img.shields.io/cocoapods/l/ActionPickerUtils.svg?style=flat)](http://cocoapods.org/pods/ActionPickerUtils)
 [![Platform](https://img.shields.io/cocoapods/p/ActionPickerUtils.svg?style=flat)](http://cocoapods.org/pods/ActionPickerUtils)
-[![CI Status](http://img.shields.io/travis/anton-plebanovich/ActionPickerUtils.svg?style=flat)](https://travis-ci.org/anton-plebanovich/ActionPickerUtils)
+[![CI Status](http://img.shields.io/travis/APUtils/ActionPickerUtils.svg?style=flat)](https://travis-ci.org/APUtils/ActionPickerUtils)
 
 Utils global functions to simplify working with ActionSheetPicker-3.0
 
