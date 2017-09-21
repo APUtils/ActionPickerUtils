@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ActionPickerUtils'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'Utils global functions to simplify working with ActionSheetPicker-3.0'
 
 # This description is used to generate tags and improve search results.
