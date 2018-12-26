@@ -61,7 +61,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rLR-Tt-lTL">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="0i5-Bg-M0Q">
+                        <barButtonItem key="leftBarButtonItem" id="0i5-Bg-M0Q">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rF7-yO-BbT">
                                 <rect key="frame" x="16" y="7" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -71,7 +71,7 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="ChR-ZU-Kfo">
+                        <barButtonItem key="rightBarButtonItem" id="ChR-ZU-Kfo">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3ab-Mo-31j">
                                 <rect key="frame" x="271" y="7" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
