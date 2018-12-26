@@ -1,6 +1,0 @@
-framework module Pods_ActionPickerUtils_Tests {
-  umbrella header "Pods-ActionPickerUtils_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

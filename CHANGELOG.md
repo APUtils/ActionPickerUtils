@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file.
 `ActionPickerUtils` adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.0.0](https://github.com/APUtils/ActionPickerUtils/releases/tag/3.0.0)
+Released on 12/26/2018.
+
+#### Added
+- Ability to specify picked origin param
+
+#### Fixed
+- Picked show on iPad
+
+
 ## [2.0.2](https://github.com/APUtils/ActionPickerUtils/releases/tag/2.0.2)
 Released on 09/22/2017.
 
