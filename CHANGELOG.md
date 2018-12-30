@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 `ActionPickerUtils` adheres to [Semantic Versioning](http://semver.org/).
 
+
+## [4.0.0](https://github.com/APUtils/ActionPickerUtils/releases/tag/4.0.0)
+Released on 12/30/2018.
+
+#### Added
+- Swift 4.2
+
+
 ## [3.0.0](https://github.com/APUtils/ActionPickerUtils/releases/tag/3.0.0)
 Released on 12/26/2018.
 
