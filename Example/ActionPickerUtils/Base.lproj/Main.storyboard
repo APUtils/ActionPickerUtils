@@ -37,27 +37,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jm2-HV-1ZL">
-                                <rect key="frame" x="147.5" y="152" width="80" height="30"/>
-                                <state key="normal" title="Select Date"/>
-                                <connections>
-                                    <action selector="onSelectDateTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="E27-Br-izW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ev5-BY-k3j">
-                                <rect key="frame" x="143.5" y="318.5" width="88" height="30"/>
-                                <state key="normal" title="Select String"/>
-                                <connections>
-                                    <action selector="onSelectStringTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="u6a-hb-i5f"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0ZJ-R8-kFG">
+                                <rect key="frame" x="110.5" y="288.5" width="154" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jm2-HV-1ZL">
+                                        <rect key="frame" x="0.0" y="0.0" width="154" height="30"/>
+                                        <state key="normal" title="Select Date"/>
+                                        <connections>
+                                            <action selector="onSelectDateTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="E27-Br-izW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ev5-BY-k3j">
+                                        <rect key="frame" x="0.0" y="30" width="154" height="30"/>
+                                        <state key="normal" title="Select String"/>
+                                        <connections>
+                                            <action selector="onSelectStringTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="u6a-hb-i5f"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uio-66-K62">
+                                        <rect key="frame" x="0.0" y="60" width="154" height="30"/>
+                                        <state key="normal" title="Select Multiple Strings"/>
+                                        <connections>
+                                            <action selector="onSelectMultipleStrings:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="u2L-VQ-Dcr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ev5-BY-k3j" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="KK4-VY-ukl"/>
-                            <constraint firstItem="Jm2-HV-1ZL" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" multiplier="0.5" id="gt3-cV-ae9"/>
-                            <constraint firstItem="Ev5-BY-k3j" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="jLW-UT-q9Q"/>
-                            <constraint firstItem="Jm2-HV-1ZL" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="wNi-wB-R92"/>
+                            <constraint firstItem="0ZJ-R8-kFG" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="CSn-2s-b9r"/>
+                            <constraint firstItem="0ZJ-R8-kFG" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="wNy-VO-58y"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rLR-Tt-lTL">

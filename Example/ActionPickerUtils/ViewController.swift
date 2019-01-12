@@ -27,4 +27,14 @@ class ViewController: UIViewController {
             sender.setTitle(string, for: .normal)
         }
     }
+    
+    @IBAction private func onSelectMultipleStrings(_ sender: UIButton) {
+        let minutes = Array(0...59).map { "\($0)m" }
+        let hours = Array(0...23).map { "\($0)h" }
+        let days = Array(0...31).map { "\($0)d" }
+        let values = [days, hours, minutes]
+        g_showMultipleStringsPicker(title: "Title", values: values) { indexes, titles in
+            sender.setTitle(titles.joined(separator: " - "), for: .normal)
+        }
+    }
 }

@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 `ActionPickerUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [4.1.0](https://github.com/APUtils/ActionPickerUtils/releases/tag/4.1.0)
+Released on 01/12/2019.
+
+#### Added
+- g_showMultipleStringsPicker(title:values:origin:completion:)
+
+
 ## [4.0.0](https://github.com/APUtils/ActionPickerUtils/releases/tag/4.0.0)
 Released on 12/30/2018.
 

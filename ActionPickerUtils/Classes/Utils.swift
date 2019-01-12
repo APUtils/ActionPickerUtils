@@ -78,7 +78,14 @@ public func g_showDatePicker(title: String? = nil, mode: UIDatePicker.Mode = .da
 /// - parameter completion: Picked value
 public func g_showStringsPicker(title: String? = nil, values: [String], selected: Int? = nil, origin: UIView? = nil, completion: @escaping (Int, String) -> ()) {
     let selected = selected ?? 0
-    guard !values.isEmpty, selected < values.count else { return }
+    guard !values.isEmpty else {
+        print("Values are empty")
+        return
+    }
+    guard selected < values.count else {
+        print("Incorrect selected value \(selected). Must be equal to values count '\(values.count)'")
+        return
+    }
     
     let pickerVc = ActionSheetStringPicker(title: title, rows: values, initialSelection: selected, doneBlock: { picker, index, string in
         completion(index, values[index])
@@ -88,4 +95,51 @@ public func g_showStringsPicker(title: String? = nil, values: [String], selected
     pickerVc.titleTextAttributes = UINavigationBar.appearance().titleTextAttributes
     pickerVc.tapDismissAction = .success
     pickerVc.show()
+}
+
+/// Show date and time picker
+/// - parameter title: Picker title
+/// - parameter values: Values to pick
+/// - parameter selected: Selected index
+/// - parameter origin: Origin to show popup from on iPads. If `nil` will be tried to detect automatically.
+/// - parameter completion: Picked value
+public func g_showMultipleStringsPicker(title: String? = nil, values: [[String]], selected: [Int]? = nil, origin: UIView? = nil, completion: @escaping ([Int], [String]) -> ()) {
+    guard !values.isEmpty else {
+        print("Values are empty")
+        return
+    }
+    guard values.reduce(true, { $0 && !$1.isEmpty }) else {
+        print("Value must not be an empty array")
+        return
+    }
+    let selected = selected ?? values.map { _ in 0 }
+    guard selected.count == values.count else {
+        print("Incorrect selected value \(selected.count). Must be equal to values count '\(values.count)'")
+        return
+    }
+    for (index, selectedRow) in selected.enumerated() {
+        if values[index].count <= selectedRow {
+            print("Incorrect selected value '\(selectedRow)' for index '\(index)'. Only '\(values[index].count)' elements available.")
+            return
+        }
+    }
+    
+    let pickerVC = ActionSheetMultipleStringPicker(title: title, rows: values, initialSelection: selected, doneBlock: { _, indexes, values in
+        guard let indexes = indexes as? [Int] else {
+            print("Incorrect retun format for indexes")
+            return
+        }
+        guard let values = values as? [String] else {
+            print("Incorrect retun format for values")
+            return
+        }
+        
+        completion(indexes, values)
+        
+    }, cancel: nil, origin: origin ?? _origin)!
+    
+    pickerVC.toolbarBackgroundColor = UINavigationBar.appearance().barTintColor
+    pickerVC.titleTextAttributes = UINavigationBar.appearance().titleTextAttributes
+    pickerVC.tapDismissAction = .success
+    pickerVC.show()
 }
