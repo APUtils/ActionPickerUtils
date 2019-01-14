@@ -79,11 +79,11 @@ public func g_showDatePicker(title: String? = nil, mode: UIDatePicker.Mode = .da
 public func g_showStringsPicker(title: String? = nil, values: [String], selected: Int? = nil, origin: UIView? = nil, completion: @escaping (Int, String) -> ()) {
     let selected = selected ?? 0
     guard !values.isEmpty else {
-        print("Values are empty")
+        print("ActionPickerUtils: Values are empty")
         return
     }
     guard selected < values.count else {
-        print("Incorrect selected value \(selected). Must be equal to values count '\(values.count)'")
+        print("ActionPickerUtils: Incorrect selected value \(selected). Must be equal to values count '\(values.count)'")
         return
     }
     
@@ -105,32 +105,32 @@ public func g_showStringsPicker(title: String? = nil, values: [String], selected
 /// - parameter completion: Picked value
 public func g_showMultipleStringsPicker(title: String? = nil, values: [[String]], selected: [Int]? = nil, origin: UIView? = nil, completion: @escaping ([Int], [String]) -> ()) {
     guard !values.isEmpty else {
-        print("Values are empty")
+        print("ActionPickerUtils: Values are empty")
         return
     }
     guard values.reduce(true, { $0 && !$1.isEmpty }) else {
-        print("Value must not be an empty array")
+        print("ActionPickerUtils: Value must not be an empty array")
         return
     }
     let selected = selected ?? values.map { _ in 0 }
     guard selected.count == values.count else {
-        print("Incorrect selected value \(selected.count). Must be equal to values count '\(values.count)'")
+        print("ActionPickerUtils: Incorrect selected value \(selected.count). Must be equal to values count '\(values.count)'")
         return
     }
     for (index, selectedRow) in selected.enumerated() {
         if values[index].count <= selectedRow {
-            print("Incorrect selected value '\(selectedRow)' for index '\(index)'. Only '\(values[index].count)' elements available.")
+            print("ActionPickerUtils: Incorrect selected value '\(selectedRow)' for index '\(index)'. Only '\(values[index].count)' elements available.")
             return
         }
     }
     
     let pickerVC = ActionSheetMultipleStringPicker(title: title, rows: values, initialSelection: selected, doneBlock: { _, indexes, values in
         guard let indexes = indexes as? [Int] else {
-            print("Incorrect retun format for indexes")
+            print("ActionPickerUtils: Incorrect retun format for indexes")
             return
         }
         guard let values = values as? [String] else {
-            print("Incorrect retun format for values")
+            print("ActionPickerUtils: Incorrect retun format for values")
             return
         }
         
