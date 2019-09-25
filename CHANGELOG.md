@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 `ActionPickerUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [5.0.0](https://github.com/APUtils/ActionPickerUtils/releases/tag/5.0.0)
+Released on 09/25/2019.
+
+#### Changed
+- Xcode 11 migration
+
+
 ## [4.1.0](https://github.com/APUtils/ActionPickerUtils/releases/tag/4.1.0)
 Released on 01/12/2019.
 
