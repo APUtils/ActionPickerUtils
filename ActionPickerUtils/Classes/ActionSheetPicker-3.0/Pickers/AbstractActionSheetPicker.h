@@ -61,6 +61,7 @@ static NSString *const kActionType = @"buttonAction";
 static NSString *const kActionTarget = @"buttonActionTarget";
 
 @interface AbstractActionSheetPicker : NSObject <UIPopoverControllerDelegate>
+@property(nonatomic, class, readonly) CGFloat ios13AdditionalInset;
 @property(nonatomic, strong) SWActionSheet *actionSheet;
 @property (nonatomic) UIWindowLevel windowLevel;
 @property(nonatomic, assign) NSInteger tag;

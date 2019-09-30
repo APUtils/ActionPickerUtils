@@ -69,7 +69,7 @@
 - (UIView *)configuredPickerView {
     if (!self.data)
         return nil;
-    CGRect pickerFrame = CGRectMake(0, 40, self.viewSize.width, 216);
+    CGRect pickerFrame = CGRectMake(0, 40 + AbstractActionSheetPicker.ios13AdditionalInset, self.viewSize.width, 216);
     UIPickerView *stringPicker = [[UIPickerView alloc] initWithFrame:pickerFrame];
     stringPicker.delegate = self;
     stringPicker.dataSource = self;

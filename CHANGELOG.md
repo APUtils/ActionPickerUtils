@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 `ActionPickerUtils` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [6.0.0](https://github.com/APUtils/ActionPickerUtils/releases/tag/6.0.0)
+Released on 09/30/2019.
+
+#### Fixed
+- iOS 13 popover layout
+
+
 ## [5.0.0](https://github.com/APUtils/ActionPickerUtils/releases/tag/5.0.0)
 Released on 09/25/2019.
 

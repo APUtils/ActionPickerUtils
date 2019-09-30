@@ -127,6 +127,16 @@ CG_INLINE BOOL isIPhone4() {
 
 @implementation AbstractActionSheetPicker
 
++ (CGFloat)ios13AdditionalInset {
+    if (IS_IPAD && [[[UIDevice currentDevice] systemVersion] floatValue] >= 13.0) {
+        // On iOS 13.0 popover arrow mask is applied to a content so need to use inset.
+        // It won't look good but won't look terrible either.
+        return 13;
+    } else {
+        return 0;
+    }
+}
+
 #pragma mark - Abstract Implementation
 
 - (instancetype)init {
@@ -237,7 +247,7 @@ CG_INLINE BOOL isIPhone4() {
 #pragma mark - Actions
 
 - (void)showActionSheetPicker {
-    UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260)];
+    UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260 + AbstractActionSheetPicker.ios13AdditionalInset)];
 
     // to fix bug, appeared only on iPhone 4 Device: https://github.com/skywinder/ActionSheetPicker-3.0/issues/5
     if (isIPhone4()) {
@@ -265,8 +275,8 @@ CG_INLINE BOOL isIPhone4() {
     // toolbar hidden remove the toolbar frame and update pickerview frame
     if (self.toolbar.hidden) {
         int halfWidth = (int) (_borderWidth * 0.5f);
-        masterView.frame = CGRectMake(0, 0, self.viewSize.width, 220);
-        self.pickerView.frame = CGRectMake(0, halfWidth, self.viewSize.width, 220 - halfWidth);
+        masterView.frame = CGRectMake(0, 0, self.viewSize.width, 220 + AbstractActionSheetPicker.ios13AdditionalInset);
+        self.pickerView.frame = CGRectMake(0, halfWidth, self.viewSize.width + AbstractActionSheetPicker.ios13AdditionalInset, 220 + AbstractActionSheetPicker.ios13AdditionalInset - halfWidth);
     }
     [masterView addSubview:_pickerView];
 
@@ -469,7 +479,10 @@ CG_INLINE BOOL isIPhone4() {
 
 
 - (UIToolbar *)createPickerToolbarWithTitle:(NSString *)title {
+    
     CGRect frame = CGRectMake(0, 0, self.viewSize.width, 44);
+    frame.size.height += AbstractActionSheetPicker.ios13AdditionalInset;
+    
     UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:frame];
     pickerToolbar.barStyle = (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? UIBarStyleDefault : UIBarStyleBlackTranslucent;
 
@@ -625,8 +638,10 @@ CG_INLINE BOOL isIPhone4() {
 
 - (CGSize)viewSize {
     if (IS_IPAD) {
-        if (!self.popoverDisabled && [MyPopoverController canShowPopover])
+        if (!self.popoverDisabled && [MyPopoverController canShowPopover]) {
             return CGSizeMake(320, 320);
+        }
+        
         return [UIApplication sharedApplication].keyWindow.bounds.size;
     }
 
@@ -748,7 +763,7 @@ CG_INLINE BOOL isIPhone4() {
     }
     else if ((self.containerView)) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [popover presentPopoverFromRect:_containerView.bounds inView:_containerView
+            [popover presentPopoverFromRect:self->_containerView.bounds inView:self->_containerView
                    permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 
         });
