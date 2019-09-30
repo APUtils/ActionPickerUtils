@@ -30,6 +30,7 @@ User `g_showDatePicker` for date picker and `g_showStringsPicker` for strings pi
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+  s.swift_versions = '5.0'
 
   s.source_files = 'ActionPickerUtils/Classes/**/*'
   s.public_header_files = 'ActionPickerUtils/Classes/**/*.h'
