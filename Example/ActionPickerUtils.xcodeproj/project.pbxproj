@@ -330,12 +330,10 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ActionPickerUtils_Example/Pods-ActionPickerUtils_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ActionPickerUtils/ActionPickerUtils.framework",
-				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionPickerUtils.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ActionPickerUtils'
-  s.version          = '5.0.0'
+  s.version          = '6.0.0'
   s.summary          = 'Utils global functions to simplify working with ActionSheetPicker-3.0'
 
 # This description is used to generate tags and improve search results.
@@ -32,12 +32,6 @@ User `g_showDatePicker` for date picker and `g_showStringsPicker` for strings pi
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'ActionPickerUtils/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'ActionPickerUtils' => ['ActionPickerUtils/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'ActionPickerUtils/Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit'
-  s.dependency 'ActionSheetPicker-3.0'
 end

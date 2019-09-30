@@ -37,4 +37,16 @@ class ViewController: UIViewController {
             sender.setTitle(titles.joined(separator: " - "), for: .normal)
         }
     }
+    
+    @IBAction private func onLeftTap(_ sender: UIButton) {
+        g_showDatePicker { date in
+            sender.setTitle(date.description, for: .normal)
+        }
+    }
+    
+    @IBAction private func onRightTap(_ sender: UIButton) {
+        g_showDatePicker { date in
+            sender.setTitle(date.description, for: .normal)
+        }
+    }
 }
