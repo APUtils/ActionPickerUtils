@@ -46,17 +46,26 @@ fileprivate var _origin: UIView? {
 /// - parameter showTodayButton: Show button that picks todays date?
 /// - parameter origin: Origin to show popup from on iPads. If `nil` will be tried to detect automatically.
 /// - parameter completion: Picked date
-public func g_showDatePicker(title: String? = nil, mode: UIDatePicker.Mode = .dateAndTime, date: Date? = nil, minDate: Date? = nil, maxDate: Date? = nil, showTodayButton: Bool = false, origin: UIView? = nil, completion: @escaping (Date) -> ()) {
+public func g_showDatePicker(title: String? = nil,
+                             mode: UIDatePicker.Mode = .dateAndTime,
+                             date: Date? = nil,
+                             minDate: Date? = nil,
+                             maxDate: Date? = nil,
+                             showTodayButton: Bool = false,
+                             origin: UIView? = nil,
+                             cancel: (() -> Void)? = nil,
+                             completion: @escaping (Date) -> ()) {
+    
     let pickerVc = ActionSheetDatePicker(title: title, datePickerMode: mode, selectedDate: date ?? Date(), doneBlock: { picker, date, originView in
         completion(date as! Date)
-    }, cancel: nil, origin: origin ?? _origin)!
+    }, cancel: { _ in cancel?() }, origin: origin ?? _origin)!
     
     pickerVc.minimumDate = minDate
     pickerVc.maximumDate = maxDate
     pickerVc.toolbarBackgroundColor = UINavigationBar.appearance().barTintColor
     pickerVc.titleTextAttributes = UINavigationBar.appearance().titleTextAttributes
     pickerVc.tapDismissAction = .success
-
+    
     if showTodayButton {
         pickerVc.addCustomButton(withTitle: "Today", value: Date())
     }
