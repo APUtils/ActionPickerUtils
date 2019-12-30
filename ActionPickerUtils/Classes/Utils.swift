@@ -45,6 +45,7 @@ fileprivate var _origin: UIView? {
 /// - parameter maxDate: Maximum date border
 /// - parameter showTodayButton: Show button that picks todays date?
 /// - parameter origin: Origin to show popup from on iPads. If `nil` will be tried to detect automatically.
+/// - parameter onCancel: Cancel action callback
 /// - parameter completion: Picked date
 public func g_showDatePicker(title: String? = nil,
                              mode: UIDatePicker.Mode = .dateAndTime,
@@ -53,12 +54,12 @@ public func g_showDatePicker(title: String? = nil,
                              maxDate: Date? = nil,
                              showTodayButton: Bool = false,
                              origin: UIView? = nil,
-                             cancel: (() -> Void)? = nil,
+                             onCancel: (() -> Void)? = nil,
                              completion: @escaping (Date) -> ()) {
     
     let pickerVc = ActionSheetDatePicker(title: title, datePickerMode: mode, selectedDate: date ?? Date(), doneBlock: { picker, date, originView in
         completion(date as! Date)
-    }, cancel: { _ in cancel?() }, origin: origin ?? _origin)!
+    }, cancel: { _ in onCancel?() }, origin: origin ?? _origin)!
     
     pickerVc.minimumDate = minDate
     pickerVc.maximumDate = maxDate
@@ -78,8 +79,15 @@ public func g_showDatePicker(title: String? = nil,
 /// - parameter values: Values to pick
 /// - parameter selected: Selected index
 /// - parameter origin: Origin to show popup from on iPads. If `nil` will be tried to detect automatically.
+/// - parameter onCancel: Cancel action callback
 /// - parameter completion: Picked value
-public func g_showStringsPicker(title: String? = nil, values: [String], selected: Int? = nil, origin: UIView? = nil, completion: @escaping (Int, String) -> ()) {
+public func g_showStringsPicker(title: String? = nil,
+                                values: [String],
+                                selected: Int? = nil,
+                                origin: UIView? = nil,
+                                onCancel: (() -> Void)? = nil,
+                                completion: @escaping (Int, String) -> ()) {
+    
     let selected = selected ?? 0
     guard !values.isEmpty else {
         print("ActionPickerUtils: Values are empty")
@@ -92,7 +100,7 @@ public func g_showStringsPicker(title: String? = nil, values: [String], selected
     
     let pickerVc = ActionSheetStringPicker(title: title, rows: values, initialSelection: selected, doneBlock: { picker, index, string in
         completion(index, values[index])
-    }, cancel: nil, origin: origin ?? _origin)!
+    }, cancel: { _ in onCancel?() }, origin: origin ?? _origin)!
     
     pickerVc.toolbarBackgroundColor = UINavigationBar.appearance().barTintColor
     pickerVc.titleTextAttributes = UINavigationBar.appearance().titleTextAttributes
@@ -105,8 +113,15 @@ public func g_showStringsPicker(title: String? = nil, values: [String], selected
 /// - parameter values: Values to pick
 /// - parameter selected: Selected index
 /// - parameter origin: Origin to show popup from on iPads. If `nil` will be tried to detect automatically.
+/// - parameter onCancel: Cancel action callback
 /// - parameter completion: Picked value
-public func g_showMultipleStringsPicker(title: String? = nil, values: [[String]], selected: [Int]? = nil, origin: UIView? = nil, completion: @escaping ([Int], [String]) -> ()) {
+public func g_showMultipleStringsPicker(title: String? = nil,
+                                        values: [[String]],
+                                        selected: [Int]? = nil,
+                                        origin: UIView? = nil,
+                                        onCancel: (() -> Void)? = nil,
+                                        completion: @escaping ([Int], [String]) -> ()) {
+    
     guard !values.isEmpty else {
         print("ActionPickerUtils: Values are empty")
         return
@@ -139,7 +154,7 @@ public func g_showMultipleStringsPicker(title: String? = nil, values: [[String]]
         
         completion(indexes, values)
         
-    }, cancel: nil, origin: origin ?? _origin)!
+    }, cancel: { _ in onCancel?() }, origin: origin ?? _origin)!
     
     pickerVC.toolbarBackgroundColor = UINavigationBar.appearance().barTintColor
     pickerVC.titleTextAttributes = UINavigationBar.appearance().titleTextAttributes
