@@ -10,7 +10,7 @@ import UIKit
 
 private extension UIView {
     /// Returns all view's subviews
-    var allSubviews: [UIView] {
+    var _allSubviews: [UIView] {
         var allSubviews = self.subviews
         allSubviews.forEach { allSubviews.append(contentsOf: $0.allSubviews) }
         return allSubviews
@@ -29,7 +29,7 @@ fileprivate var _origin: UIView? {
     
     if UIDevice.current.userInterfaceIdiom == .pad {
         // Try to find pressed button on iPads
-        return window?.allSubviews
+        return window?._allSubviews
             .compactMap { $0 as? UIButton }
             .first { $0.isHighlighted }
     } else {
