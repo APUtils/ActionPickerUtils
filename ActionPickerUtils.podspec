@@ -8,15 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ActionPickerUtils'
-  s.version          = '6.0.0'
+  s.version          = '7.0.0'
   s.summary          = 'Utils global functions to simplify working with ActionSheetPicker-3.0'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  
   s.description      = <<-DESC
 Utils global functions to simplify working with ActionSheetPicker-3.0.
 User `g_showDatePicker` for date picker and `g_showStringsPicker` for strings picker.
@@ -33,6 +27,12 @@ User `g_showDatePicker` for date picker and `g_showStringsPicker` for strings pi
   s.swift_versions = '5.1'
 
   s.source_files = 'ActionPickerUtils/Classes/**/*'
-  s.public_header_files = 'ActionPickerUtils/Classes/**/*.h'
+  
+  # s.resource_bundles = {
+  #   'ActionPickerUtils' => ['ActionPickerUtils/Assets/*.png']
+  # }
+  
+  # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit'
+  s.dependency 'ActionSheetPicker-3.0', '~> 2.5'
 end

@@ -21,7 +21,7 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile:
 
 ```
-github "APUtils/ActionPickerUtils" ~> 6.0
+github "APUtils/ActionPickerUtils" ~> 7.0
 ```
 
 #### CocoaPods
@@ -30,7 +30,7 @@ ActionPickerUtils is available through [CocoaPods](http://cocoapods.org). To ins
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ActionPickerUtils', '~> 6.0'
+pod 'ActionPickerUtils', '~> 7.0'
 ```
 
 ## Usage

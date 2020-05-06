@@ -8,6 +8,12 @@
 
 import UIKit
 
+#if COCOAPODS
+    import ActionSheetPicker_3_0
+#else
+    import CoreActionSheetPicker
+#endif
+
 private extension UIView {
     /// Returns all view's subviews
     var _allSubviews: [UIView] {

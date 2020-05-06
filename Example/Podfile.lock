@@ -1,5 +1,7 @@
 PODS:
-  - ActionPickerUtils (6.0.0)
+  - ActionPickerUtils (7.0.0):
+    - ActionSheetPicker-3.0 (~> 2.5)
+  - ActionSheetPicker-3.0 (2.5.0)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
@@ -32,13 +34,16 @@ SPEC REPOS:
     - Nimble
     - Nimble-Snapshots
     - Quick
+  trunk:
+    - ActionSheetPicker-3.0
 
 EXTERNAL SOURCES:
   ActionPickerUtils:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ActionPickerUtils: b7f9bf047e629f4dd6e184e5dec794e87b8f7dbc
+  ActionPickerUtils: 81ef24e6e140509a881bf4e9250dac7cc5620bc9
+  ActionSheetPicker-3.0: 6d79f6f3b98e2b21d218dd65a39f634ff37a27e5
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   iOSSnapshotTestCase: 415bd84f9dbba4ff45fede49d800bc7332fbedac
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
@@ -47,4 +52,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 24dafd779fe33c085d140f6380c1dff5ff5c5511
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.9.1
