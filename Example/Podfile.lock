@@ -1,55 +1,46 @@
 PODS:
   - ActionPickerUtils (7.0.0):
     - ActionSheetPicker-3.0 (~> 2.5)
-  - ActionSheetPicker-3.0 (2.5.0)
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
-  - iOSSnapshotTestCase (2.2.0):
-    - iOSSnapshotTestCase/SwiftSupport (= 2.2.0)
-  - iOSSnapshotTestCase/Core (2.2.0)
-  - iOSSnapshotTestCase/SwiftSupport (2.2.0):
+  - ActionSheetPicker-3.0 (2.7.1)
+  - iOSSnapshotTestCase (5.0.2):
+    - iOSSnapshotTestCase/SwiftSupport (= 5.0.2)
+  - iOSSnapshotTestCase/Core (5.0.2)
+  - iOSSnapshotTestCase/SwiftSupport (5.0.2):
     - iOSSnapshotTestCase/Core
   - Nimble (7.3.4)
-  - Nimble-Snapshots (6.4.1):
-    - Nimble-Snapshots/Core (= 6.4.1)
-  - Nimble-Snapshots/Core (6.4.1):
-    - iOSSnapshotTestCase (~> 2.0)
+  - Nimble-Snapshots (6.9.1):
+    - Nimble-Snapshots/Core (= 6.9.1)
+  - Nimble-Snapshots/Core (6.9.1):
+    - iOSSnapshotTestCase (~> 5.0)
     - Nimble (~> 7.0)
-  - Quick (2.2.0)
+  - Quick (3.1.2)
 
 DEPENDENCIES:
   - ActionPickerUtils (from `../`)
-  - FBSnapshotTestCase
   - Nimble
   - Nimble-Snapshots
   - Quick
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - FBSnapshotTestCase
+    - ActionSheetPicker-3.0
     - iOSSnapshotTestCase
     - Nimble
     - Nimble-Snapshots
     - Quick
-  trunk:
-    - ActionSheetPicker-3.0
 
 EXTERNAL SOURCES:
   ActionPickerUtils:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ActionPickerUtils: 81ef24e6e140509a881bf4e9250dac7cc5620bc9
-  ActionSheetPicker-3.0: 6d79f6f3b98e2b21d218dd65a39f634ff37a27e5
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  iOSSnapshotTestCase: 415bd84f9dbba4ff45fede49d800bc7332fbedac
+  ActionPickerUtils: fcc120cf07a2b67d559b81392498e43a93afbbfd
+  ActionSheetPicker-3.0: 36da254b97a09ff89679ecb8b8510bd3e5bdc773
+  iOSSnapshotTestCase: 2d51aa06775e95cecb0a1fb9c5c159ccd1dd4596
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
-  Nimble-Snapshots: 438fb1a6fa3c655e246fc9ac375f6cd2964d759a
-  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  Nimble-Snapshots: bbd1ab264bacc24a9ce24a8363bc05aac783aeb0
+  Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
 
-PODFILE CHECKSUM: 24dafd779fe33c085d140f6380c1dff5ff5c5511
+PODFILE CHECKSUM: 4b26946d356b68f1e5dacb50dc89a44fe74857cf
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.1

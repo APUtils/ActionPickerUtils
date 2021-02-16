@@ -4,7 +4,7 @@
 base_dir=$(dirname "$0")
 cd "$base_dir"
 
-. utils
+. utils.sh
 
 cd ..
 cd ..
@@ -27,7 +27,7 @@ echo ""
 read -p "Which pod to update? Press enter to update all: " pod_name
 
 # Check if pod has git repository attached
-if grep -cq "\- ${pod_name} (from " Podfile.lock; then
+if grep -cq "\- ${pod_name}.*(from " Podfile.lock; then
     # Pod has git repository attached. No need to fetch pods repo.
     pod update $pod_name --no-repo-update
 else
